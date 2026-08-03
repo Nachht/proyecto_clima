@@ -8,7 +8,7 @@ Aplicación web desarrollada con **HTML, CSS y JavaScript** que permite consulta
 
 Weather App permite al usuario ingresar el nombre de una ciudad y visualizar información meteorológica en tiempo real, incluyendo la temperatura, la humedad, la velocidad del viento y un pronóstico para los próximos cinco días, tambien comparar el clima de diferentes ciudades.
 
-La aplicación fue desarrollada siguiendo buenas prácticas de programación, implementando manejo de errores, validación de entradas y un sistema de almacenamiento temporal en caché para reducir consultas repetidas a la API.
+La aplicación fue desarrollada siguiendo buenas prácticas de programación, implementando manejo de errores, validación de entradas y un sistema de almacenamiento temporal en caché para reducir consultas repetidas a la API. También se utilizo la IA como apoyo para buenas practicas con la misma y con su uso responsable, sin abusar de la misma y entendiendo el correcto uso de la IA para el desarrollo web.
 
 ---
 
@@ -105,4 +105,4 @@ La aplicación contempla diferentes escenarios:
 
 ## 👨‍💻 Autor
 
-Desarrollado por **Daniel Casas** con apoyo de la IA, para proyecto académico para el consumo de APIs utilizando JavaScript y Open-Meteo.
+Desarrollado por **Daniel Casas** con apoyo de la IA con buenas practicas y el correcto manejo de IA, para proyecto académico con consumo de APIs utilizando JavaScript y Open-Meteo.
