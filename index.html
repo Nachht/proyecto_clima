@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/imgpestaña.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="glow glow--one"></div>
+        <div class="glow glow--two"></div>
+    </div>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <h1>
+                <i class="fa-solid fa-cloud-moon"></i>
+                Weather App
+            </h1>
+            <p>Consulta el clima actual, el pronóstico de 5 días y compara varias ciudades a la vez.</p>
+        </header>
+
+        <!-- Buscador -->
+        <section class="search-card">
+            <label for="cityInput" class="visually-hidden">Ciudad</label>
+            <div class="search-field">
+                <i class="fa-solid fa-location-dot"></i>
+                <input id="cityInput" type="text" placeholder="Ingrese una ciudad..." autocomplete="off">
+            </div>
+            <button id="searchBtn" type="button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Buscar
+            </button>
+        </section>
+
+        <!-- Loader -->
+        <section id="loader" class="loader hidden" aria-live="polite">
+            <div class="spinner"></div>
+            <p>Consultando información...</p>
+        </section>
+
+        <!-- Mensajes -->
+        <section id="message" class="message hidden" role="alert"></section>
+
+        <!-- Clima -->
+        <section id="weatherContainer" class="weather-container hidden">
+
+            <!-- Tarjeta principal -->
+            <div class="current-weather">
+                <div class="weather-header">
+                    <div class="weather-header__info">
+                        <span class="eyebrow">Clima actual</span>
+                        <h2 id="cityName">Ciudad</h2>
+                        <span id="cacheInfo" class="cache-info"></span>
+                    </div>
+                    <div id="weatherIcon" class="weather-icon">☀️</div>
+                </div>
+
+                <div class="temperature">
+                    <span id="temperature">--°C</span>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <span>
+                            <strong>Viento</strong>
+                            <p id="wind">--</p>
+                        </span>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>
+                            <strong>Humedad</strong>
+                            <p id="humidity">--</p>
+                        </span>
+                    </div>
+                </div>
+
+                <button id="addCompareBtn" type="button" class="btn-ghost">
+                    <i class="fa-solid fa-square-plus"></i>
+                    Agregar a comparación
+                </button>
+
+            </div>
+
+            <!-- Pronóstico -->
+            <div class="forecast">
+                <h2>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Pronóstico 5 días
+                </h2>
+                <div id="forecastCards" class="forecast-grid"></div>
+            </div>
+
+        </section>
+
+        <!-- Comparar ciudades -->
+        <section class="compare-section">
+
+            <div class="compare-heading">
+                <h2>
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    Comparar ciudades
+                </h2>
+                <p>Agrega hasta 6 ciudades y compáralas en una sola vista.</p>
+            </div>
+
+            <div class="compare-add">
+                <label for="compareCityInput" class="visually-hidden">Ciudad a comparar</label>
+                <div class="search-field">
+                    <i class="fa-solid fa-city"></i>
+                    <input id="compareCityInput" type="text" placeholder="Agregar ciudad a comparar..."
+                        autocomplete="off">
+                </div>
+                <button id="compareAddBtn" type="button">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar
+                </button>
+            </div>
+
+            <p id="compareMessage" class="message message--inline hidden" role="alert"></p>
+
+            <div id="compareEmpty" class="compare-empty">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <p>Todavía no has agregado ciudades para comparar.</p>
+            </div>
+
+            <div id="compareGrid" class="compare-grid"></div>
+
+        </section>
+
+        <footer class="app-footer">
+            <p>Datos proporcionados por Open-Meteo</p>
+        </footer>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
